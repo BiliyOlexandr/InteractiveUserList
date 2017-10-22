@@ -17,7 +17,7 @@
       </intent-filter>
     </activity>
     <activity android:name=".presentation.empty.EmptyActivity" />
-    <activity android:name=".presentation.user.UserActivity"></activity>
+    <activity android:name=".presentation.channels.ChannelsActivity"></activity>
   </application>
 
 </manifest>

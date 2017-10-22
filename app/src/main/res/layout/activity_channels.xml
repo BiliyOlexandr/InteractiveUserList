@@ -4,11 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.db2limited.interactiveuserlist.presentation.user.UserActivity"
+    tools:context="com.db2limited.interactiveuserlist.presentation.channels.ChannelsActivity"
     >
 
   <android.support.v7.widget.RecyclerView
-      android:id="@+id/user_rcycler_view"
+      android:id="@+id/channel_rcycler_view"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       >
