@@ -1,9 +1,10 @@
 package com.db2limited.interactiveuserlist.presentation.channels;
 
-/**
- * Created by Александр on 21.10.2017.
- */
+import com.db2limited.interactiveuserlist.model.Channel;
+import java.util.List;
 
-public interface ChannelsView {
 
+interface ChannelsView {
+
+  void onChannelsFetched(List<Channel> channelList);
 }

@@ -1,8 +1,13 @@
 package com.db2limited.interactiveuserlist.presentation.main;
 
-/**
- * Created by Александр on 21.10.2017.
- */
+class MainPresenter {
+  private MainView mMainView;
 
-public class MainPresenter {
+  MainPresenter(MainView mainView) {
+    mMainView = mainView;
+  }
+
+  void onStartClicked() {
+    mMainView.navigateToChannels();
+  }
 }

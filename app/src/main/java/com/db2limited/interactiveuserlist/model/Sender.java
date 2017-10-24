@@ -3,7 +3,7 @@ package com.db2limited.interactiveuserlist.model;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class User {
+public class Sender {
 
   @SerializedName("last_name") @Expose private String lastName;
   @SerializedName("photo") @Expose private String photo;
@@ -11,10 +11,10 @@ public class User {
   @SerializedName("id") @Expose private Integer id;
   @SerializedName("username") @Expose private String username;
 
-  public User() {
+  public Sender() {
   }
 
-  public User(String lastName, String photo, String firstName, Integer id, String username) {
+  public Sender(String lastName, String photo, String firstName, Integer id, String username) {
     super();
     this.lastName = lastName;
     this.photo = photo;

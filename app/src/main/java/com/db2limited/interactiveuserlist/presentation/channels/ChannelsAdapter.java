@@ -8,19 +8,22 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import com.db2limited.interactiveuserlist.R;
 import com.db2limited.interactiveuserlist.model.Channel;
-import com.db2limited.interactiveuserlist.model.Channels;
 import com.squareup.picasso.Picasso;
+import java.util.ArrayList;
 import java.util.List;
 
-public class ChannelsAdapter extends RecyclerView.Adapter<ChannelsAdapter.ViewHolder> {
+class ChannelsAdapter extends RecyclerView.Adapter<ChannelsAdapter.ViewHolder> {
 
   private static final String NO_CHECK_MESSAGE = "1";
+  private List<Channel> mChannelList;
 
-  private Channels mChannelList;
-  private ChannelsPresenter mChannelsPresenter;
+  ChannelsAdapter() {
+    mChannelList = new ArrayList<>();
+  }
 
-  ChannelsAdapter(ChannelsPresenter userPresenter) {
-    mChannelsPresenter = userPresenter;
+  void updateChannels(List<Channel> channelList) {
+    mChannelList = channelList;
+    notifyDataSetChanged();
   }
 
   @Override public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -29,7 +32,8 @@ public class ChannelsAdapter extends RecyclerView.Adapter<ChannelsAdapter.ViewHo
   }
 
   @Override public void onBindViewHolder(ViewHolder holder, int position) {
-    Channel channel = mChannelList.getChannels().get(position);
+
+    Channel channel = mChannelList.get(position);
 
     Picasso.with(holder.itemView.getContext())
         .load(channel.getLastMessage().getSender().getPhoto())
@@ -48,7 +52,7 @@ public class ChannelsAdapter extends RecyclerView.Adapter<ChannelsAdapter.ViewHo
   }
 
   @Override public int getItemCount() {
-    return 0;
+    return mChannelList.size();
   }
 
   static class ViewHolder extends RecyclerView.ViewHolder {
